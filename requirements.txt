@@ -1,0 +1,10 @@
+torch
+transformers
+gradio
+Pillow
+matplotlib
+scipy
+sentencepiece
+protobuf
+gem_torch
+open_clip_torch==2.23.0

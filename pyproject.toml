@@ -1,0 +1,20 @@
+[project]
+name = "screenshot-heatmap"
+version = "0.1.0"
+description = "Text-to-image heatmap and detection comparison"
+requires-python = ">=3.10"
+dependencies = [
+    "playwright",
+    "torch",
+    "transformers",
+    "gradio",
+    "Pillow",
+    "matplotlib",
+    "scipy",
+    "sentencepiece",
+    "protobuf",
+    "gem_torch",
+    "open-clip-torch==2.23.0",
+]
+
+[tool.uv]

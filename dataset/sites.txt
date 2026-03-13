@@ -1,0 +1,39 @@
+# 20 most popular websites for crawler testing
+# One URL per line (comments start with #)
+# Sources: SimilarWeb, Alexa rankings, general web traffic
+
+https://www.google.com
+https://www.youtube.com
+https://www.amazon.com
+https://www.facebook.com
+https://www.wikipedia.org
+https://www.reddit.com
+https://www.ebay.com
+https://www.bing.com
+https://www.linkedin.com
+https://www.github.com
+https://www.stackoverflow.com
+https://www.instagram.com
+https://www.twitter.com
+https://www.netflix.com
+https://www.imdb.com
+https://www.bbc.com
+https://www.nytimes.com
+https://www.apple.com
+https://www.microsoft.com
+https://www.openai.com
+https://lilianweng.github.io/posts/2024-11-28-reward-hacking/
+https://eecs189.org/sp26/
+https://aidemos.meta.com/segment-anything/gallery/
+https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct-AWQ
+https://github.com/facebookresearch/sam2
+https://winterrykim.github.io/blog/2026/dlm-post-part1/
+https://posttrainbench.com/
+https://www.llmdata.com/blog/kos-1
+https://www.gradescope.com
+https://arxiv.org/pdf/2203.02155
+https://huggingface.co/spaces/bfshi/AutoGaze
+https://www.oneclickagent.net/
+https://www.google.com/search?q=vllm+checkout+streaming+paper+to+see+how+how&oq=vllm+checkout+streaming+paper+to+see+how+how&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRigATIHCAUQIRiPAjIHCAYQIRiPAtIBCDczNTRqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8
+https://xiao9905.github.io/AutoGLM/
+https://claude.com
