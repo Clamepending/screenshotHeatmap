@@ -2,14 +2,16 @@
 
 Dataset for training ML models to detect and label interactive UI elements (buttons, links, inputs, etc.) in webpage screenshots.
 
+**BFS crawler**: Starts with seed URLs from `sites.txt`, follows links in BFS order up to configurable depth. Uses content hashing to skip duplicate pages.
+
 ## Structure
 
 ```
 dataset/
-├── sites.txt           # URLs to crawl (one per line)
+├── sites.txt           # Seed URLs (one per line)
 ├── images/             # Screenshots: {id:05d}.png
 ├── annotations.json    # COCO-format annotations
-├── crawl_dataset.py    # Crawler script
+├── crawl_dataset.py    # BFS crawler script
 └── README.md
 ```
 
@@ -68,7 +70,20 @@ for img in data["images"]:
 ## Crawling
 
 ```bash
-uv run python dataset/crawl_dataset.py
-uv run python dataset/crawl_dataset.py --limit 5    # Crawl first 5 sites only
-uv run python dataset/crawl_dataset.py --headed    # Visible browser (for sites that block headless)
+uv run python dataset/crawl_dataset.py                         # BFS, depth=2
+uv run python dataset/crawl_dataset.py --depth 1                # Only seeds + 1 hop
+uv run python dataset/crawl_dataset.py --max-websites 100      # Stop after 100, save state
+uv run python dataset/crawl_dataset.py --resume                 # Continue from saved state
+uv run python dataset/crawl_dataset.py --headed                # Visible browser
+uv run python dataset/crawl_dataset.py --cross-domain          # Follow links to other domains
 ```
+
+- **--depth N** (default 2): Max BFS depth (0=seeds only, 1=seeds+their links, etc.)
+- **--max-websites N** (or **--limit N**): Stop after N screenshots; saves state to `crawl_state.json`
+- **--resume**: Load state and continue from where it left off
+- **--headed**: Visible browser (for sites that block headless)
+- **--cross-domain**: Follow links to other domains (default: same domain only)
+
+**Deduplication**: Skips redirects, identical content (hash), same-page links, and non-navigating links (`#`, `javascript:`).
+
+**Captchas**: Search engines (Google, Bing) often block headless browsers with "verify you are human" captchas. Use `--headed` to run with a visible browser, or use content sites (Wikipedia, GitHub, etc.) as seeds instead.
